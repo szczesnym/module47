@@ -17,7 +17,7 @@ public class Forum {
     }
 
     public List<ForumUser> getUserList() {
-        final List<ForumUser> tempForumUsers = new ArrayList(forumUsers)
+        final List<ForumUser> tempForumUsers = new ArrayList(forumUsers);
         return tempForumUsers;
     }
 
@@ -26,6 +26,8 @@ public class Forum {
     }
 
     public void showUsers() {
+        System.out.println("START of list of all Forum users ->");
         this.getUserList().stream().forEach(System.out::println);
+        System.out.println("<- END of list of all Forum users");
     }
 }

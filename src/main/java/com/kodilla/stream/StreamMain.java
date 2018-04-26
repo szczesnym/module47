@@ -4,6 +4,7 @@ import com.kodilla.stream.forumuser.Forum;
 import com.kodilla.stream.forumuser.ForumUser;
 import com.kodilla.stream.forumuser.SexEnum;
 
+import java.time.LocalDate;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -28,13 +29,13 @@ public class StreamMain {
         forum.fillListWithRandomUsers(20);
         forum.generateRandomNumberOfPostsForUsers();
         forum.showUsers();
-        System.out.println("----------------------------------------");
+        System.out.println("List uf users: SEX->M; Age >=20; No. of Posts > 1;");
         Map<Long, ForumUser> forumMapResult =
                 forum.getUserList().stream().filter(user -> user.getSex() == SexEnum.M)
-                        .filter(user -> (user.getBirthDate().get(YEAR) - 20) > 0)
+                        .filter(user -> ((LocalDate.now().getYear() - user.getBirthDate().get(YEAR)) >= 20))
                         .filter(user -> user.getNoOfPosts() > 0)
                         .collect(Collectors.toMap(ForumUser::getUserId, entry -> entry));
-        forumMapResult.entrySet().stream()
+        forumMapResult.entrySet()
                 .forEach(System.out::println);
     }
 }
