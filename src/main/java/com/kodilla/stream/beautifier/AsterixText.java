@@ -1,9 +1,7 @@
 package com.kodilla.stream.beautifier;
 
-import com.sun.istack.internal.NotNull;
-
 public class AsterixText {
-    public static String asterixEveryChar(@NotNull String textToAsterix) {
+    public static String asterixEveryChar(String textToAsterix) {
         String textResult = "";
         if(!textToAsterix.isEmpty()) {
             for (int i = 0; i < textToAsterix.length(); i++) {
