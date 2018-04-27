@@ -18,11 +18,4 @@ public class Continent {
     public Set<Country> getCountrySet() {
         return new HashSet<>(countrySet);
     }
-
-/*    public BigDecimal getPeopleCount() {
-        return countrySet.stream()
-                            .map(Country::getPeopleQuantity)
-                            .reduce(BigDecimal.ZERO, (sumOfQuan, countryQuan) -> sumOfQuan = sumOfQuan.add(countryQuan));
-    }
-*/
 }
